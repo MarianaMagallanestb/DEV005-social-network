@@ -3,11 +3,35 @@
     padding: 0px;
     box-sizing: border-box;
 }
-body {
-    padding: 20px;
-    background-color: aquamarine;
-}
+body{
+    display: flex;
+    background-image: url(https://png.pngtree.com/background/20220714/original/pngtree-various-flower-nature-wallpaper-in-pink-picture-image_1604480.jpg);
 
-.mahahahahahaha{
+
+}
+.img {
+    padding: 20px;
+    background-color: rgb(239, 212, 237);
+    display: flex;
+    align-items: center;
+    margin: 10px  10px solid;
+    
+   
+}
+/*@media(max-width:)*/
+
+.btnhome{
+
+    background-color: rgb(113, 15, 103);
+    display: flex;
+    padding: 15px;
+    margin: 50px;
+    justify-content: center;
+}
+.parrafohome{
     background-color: brown;
+    margin: 2px 2px;
+    align-items: center;
+    position: relative;
+   
 }
