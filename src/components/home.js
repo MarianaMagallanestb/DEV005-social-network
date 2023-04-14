@@ -5,7 +5,7 @@ export function home() {
   img.classList.add('img');
   const paragraph = document.createElement('p');
   paragraph.classList.add('parrafohome');
-  const btnCheckIn = document.createElement('button');
+  const btnCheckIn = document.createElement('input');
   btnCheckIn.classList.add('btnhome');
   paragraph.textContent = '¡Comparte tu experiencia en confianza!';
   btnCheckIn.textContent = 'Resgistrarse';
