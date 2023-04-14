@@ -6,7 +6,6 @@ import { check } from './components/check.js';
 home();
 check();
 const root = document.getElementById('root');
-root.append(check());
 
 const routes = [
   { path: '/', component: home },
