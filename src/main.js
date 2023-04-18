@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 // Páginas importadas
+import './lib/firebase';
 import { home } from './components/home.js';
 import { check } from './components/check.js';
 
