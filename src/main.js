@@ -1,5 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 // Páginas importadas
+import './lib/firebase';
 import { home } from './components/home.js';
 import { check } from './components/check.js';
 
@@ -22,9 +23,13 @@ function navegate(enlace) {
 navegate(window.location.pathname);
 
 // Eventos Dom check
-// *const form = document.querySelector('.claseTotal');
-// form.addEventListener('submit', e =>{
-// e.preventDefault();
-// checkInputs();
-// });
-//  EL METODO CHECK INPUTS ES UNA FUNCIÓN PARA VALIDAR LOS INPUTS
+const form = document.querySelector('.claseTotal');
+const iduser = document.querySelector('.user');
+form.addEventListener('submit', (event) => {
+  event.preventDefault();
+  checkInputs()
+});
+// EL METODO CHECK INPUTS ES UNA FUNCIÓN PARA VALIDAR LOS INPUTS
+function checkInputs () {}
+  const uservalue= iduser.nodeValue.trim();
+
