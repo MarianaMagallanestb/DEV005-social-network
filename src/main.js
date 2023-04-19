@@ -1,9 +1,11 @@
 // Este es el punto de entrada de tu aplicacion
 // Páginas importadas
-import './lib/firebase';
+
 import { home } from './components/home.js';
 import { check } from './components/check.js';
+import { welcome } from './components/welcome.js';
 
+initializeApp();
 check();
 // traemos id de root al DOM
 const root = document.getElementById('root');
@@ -11,6 +13,7 @@ const root = document.getElementById('root');
 const routes = [
   { path: '/', component: home },
   { path: '/check', component: check },
+  { path: '/welcome', component: welcome },
 ];
 // funcion que navega por las rutas
 function navegate(enlace) {
@@ -21,10 +24,3 @@ function navegate(enlace) {
   }
 }
 navegate(window.location.pathname);
-
-// Eventos Dom check
-const form = document.querySelector('.claseTotal');
-const iduser = document.querySelector('.user');
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-});

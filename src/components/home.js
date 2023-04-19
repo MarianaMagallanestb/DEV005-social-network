@@ -8,7 +8,7 @@ export function home() {
   img.classList.add('img');
 
   // parrafo
-  const paragraph = document.createElement('p');
+  const paragraph = document.createElement('h2');
   paragraph.classList.add('parrafohome');
   paragraph.textContent = '¡Comparte tu experiencia en confianza!';
 
@@ -17,7 +17,9 @@ export function home() {
   btnCheckIn.classList.add('btnhome');
   btnCheckIn.textContent = 'Resgistrarse';
 
-  section.append(img, paragraph, btnCheckIn);
+  section.appendChild(img);
+  section.appendChild(paragraph);
+  section.appendChild(btnCheckIn);
 
   return section;
 }
