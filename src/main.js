@@ -1,6 +1,6 @@
 // Este es el punto de entrada de tu aplicacion
 // Páginas importadas
-
+import {initializeApp} from './configurar firebase/firebase';
 import { home } from './components/home.js';
 import { check } from './components/check.js';
 import { welcome } from './components/welcome.js';
