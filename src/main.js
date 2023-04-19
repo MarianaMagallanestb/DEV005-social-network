@@ -27,8 +27,4 @@ const form = document.querySelector('.claseTotal');
 const iduser = document.querySelector('.user');
 form.addEventListener('submit', (event) => {
   event.preventDefault();
-  checkInputs()
 });
-// EL METODO CHECK INPUTS ES UNA FUNCIÓN PARA VALIDAR LOS INPUTS
-function checkInputs () {}
-const uservalue= iduser.nodeValue.trim();
