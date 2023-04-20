@@ -1,12 +1,9 @@
 // Este es el punto de entrada de tu aplicacion
 // Páginas importadas
-import {initializeApp} from './configurar firebase/firebase';
 import { home } from './components/home.js';
-import { check } from './components/check.js';
+import check from './components/check.js';
 import { welcome } from './components/welcome.js';
 
-initializeApp();
-check();
 // traemos id de root al DOM
 const root = document.getElementById('root');
 // creación de rutas
@@ -15,6 +12,8 @@ const routes = [
   { path: '/check', component: check },
   { path: '/welcome', component: welcome },
 ];
+
+const defaultRoute = '/';
 // funcion que navega por las rutas
 function navegate(enlace) {
   const route = routes.find((routeFind) => routeFind.path === enlace);
@@ -23,4 +22,4 @@ function navegate(enlace) {
     root.append(route.component());
   }
 }
-navegate(window.location.pathname);
+navegate(window.location.pathname || defaultRoute);
