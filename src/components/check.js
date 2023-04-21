@@ -1,6 +1,7 @@
-export const check = (navegate) => {
+import { loginWithCredentials } from "../lib/validationCheck";
+function checkForm() {
   const formCheck = document.createElement('form');
-  formCheck.classList = 'claseTotal';
+  formCheck.setAttribute = ('id', 'claseTotal');
   // titulo
   const title = document.createElement('h2');
   title.textContent = '¡Bienvenida!';
@@ -39,11 +40,31 @@ export const check = (navegate) => {
   formCheck.appendChild(submit);
   // FUNCION BOTON
 
-  submit.addEventListener('click', submit.addEventListener('click', () => navegate('/welcome')));
-  const form = document.querySelector('.claseTotal');
-  form.addEventListener('Submit', (e) => {
-    e.preventDefault();
-  });
+  // aqui exportaras las funciones que necesites
+
+
+
+formCheck.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  const email = document.querySelector('#email').nodeValue;
+  const password = document.querySelector('#password').nodeValue;
+  console.log(email, password);
+
+loginWithCredentials(email, password)
+    .then((userCredential) => {
+    // Signed in
+    // const user = userCredential.user;//
+      const userinput = document.querySelector('#user').nodeValue;
+
+    // ..
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      });
+});
 
   return formCheck;
-};
+}
+export default checkForm;
