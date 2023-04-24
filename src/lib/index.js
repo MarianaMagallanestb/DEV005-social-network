@@ -1,6 +1,6 @@
 // aqui exportaras las funciones que necesites
 
-import { loginWithCredentials } from "./validationCheck";
+/* import { loginWithCredentials } from "./validationCheck";
 // Dom formulario
 const formularyCheck = document.querySelector('#claseTotal');
 
@@ -27,3 +27,4 @@ formularyCheck.addEventListener('submit', async (e) => {
     // ..
     });
 });
+*/
