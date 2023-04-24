@@ -1,4 +1,5 @@
 import { loginWithCredentials } from "../lib/validationCheck";
+
 function checkForm() {
   const formCheck = document.createElement('form');
   formCheck.setAttribute = ('id', 'claseTotal');
@@ -30,6 +31,11 @@ function checkForm() {
   btnSubmit.setAttribute('id', 'btnSubmit');
   console.log(formCheck);
 
+  // mensajes de error
+  let messengeErr = document.createElement('p');
+  messengeErr.setAttribute('id', 'error');
+  messengeErr = '';
+
   formCheck.appendChild(title);
   formCheck.appendChild(User);
   formCheck.appendChild(laUser);
@@ -43,39 +49,16 @@ function checkForm() {
   btnSubmit.addEventListener('click', (e) => {
     e.preventDefault();
 
-    loginWithCredentials(email.value, password.value)
-      .then((res) => {
-        password.value = '';
-        console.log(res);
-      })
-      .catch((err) => {
-        console.error(err);
-      });
+    try {
+      const credentials = loginWithCredentials(email.value, password.value);
+      console.log(credentials);
+    } catch (err) {
+      if (err.code === 'auth/weak-password') {
+        alert('contraseña invalida');
+      }
+    }
   });
 
-  // promesa validar usuario ,correo y contraseña
-
-  /*ormCheck.addEventListener('submit', async (e) => {
-    e.preventDefault();
-    const emaill = document.querySelector('#email').nodeValue;
-    const passwordd = document.querySelector('#password').nodeValue;
-    console.log(email, passwordd);
-
-    loginWithCredentials(emaill, password)
-
-      .then((userCredential) => {
-      // Signed in
-      // const user = userCredential.user;//
-        const userinput = document.querySelector('#user').nodeValue;
-
-      // ..
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      // ..
-      });
-  });*/
   console.log('alert');
   return formCheck;
 }
