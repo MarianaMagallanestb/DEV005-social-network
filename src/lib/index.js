@@ -1,21 +1,24 @@
 // aqui exportaras las funciones que necesites
 
 import { loginWithCredentials } from "./validationCheck";
-
+// Dom formulario
 const formularyCheck = document.querySelector('#claseTotal');
 
+// agregarmos eveneto submit al formulario
 formularyCheck.addEventListener('submit', async (e) => {
   e.preventDefault();
-  const email = document.querySelector('#email').nodeValue;
-  const password = document.querySelector('#password').nodeValue;
-  console.log(email, password);
 
-loginWithCredentials(email, password)
+  // Dom imput Email, Pasword y usser
+  const emaill = document.querySelector('#email').nodeValue;
+  const passwordd = document.querySelector('#password').nodeValue;
+  console.log(emaill, passwordd);
+
+  // promesa
+  loginWithCredentials(emaill, passwordd)
     .then((userCredential) => {
     // Signed in
-    // const user = userCredential.user;//
-      const userinput = document.querySelector('#user').nodeValue;
 
+      //const user = userCredential.user;
     // ..
     })
     .catch((error) => {
@@ -24,4 +27,3 @@ loginWithCredentials(email, password)
     // ..
     });
 });
-

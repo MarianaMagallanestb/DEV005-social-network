@@ -25,9 +25,9 @@ function checkForm() {
   laemail.classList.add('labelemail');
 
   // botón submit
-  const submit = document.createElement('button');
-  submit.textContent = 'Submit';
-  submit.classList.add('btnSubmit');
+  const btnSubmit = document.createElement('button');
+  btnSubmit.textContent = 'Submit';
+  btnSubmit.setAttribute('id', 'btnSubmit');
   console.log(formCheck);
 
   formCheck.appendChild(title);
@@ -37,34 +37,44 @@ function checkForm() {
   formCheck.appendChild(lapassword);
   formCheck.appendChild(email);
   formCheck.appendChild(laemail);
-  formCheck.appendChild(submit);
+  formCheck.appendChild(btnSubmit);
   // FUNCION BOTON
 
-  // aqui exportaras las funciones que necesites
+  btnSubmit.addEventListener('click', (e) => {
+    e.preventDefault();
 
+    loginWithCredentials(email.value, password.value)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
+  });
+  // promesa validar usuario ,correo y contraseña
 
+  /*ormCheck.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const emaill = document.querySelector('#email').nodeValue;
+    const passwordd = document.querySelector('#password').nodeValue;
+    console.log(email, passwordd);
 
-formCheck.addEventListener('submit', async (e) => {
-  e.preventDefault();
-  const email = document.querySelector('#email').nodeValue;
-  const password = document.querySelector('#password').nodeValue;
-  console.log(email, password);
+    loginWithCredentials(emaill, password)
 
-loginWithCredentials(email, password)
-    .then((userCredential) => {
-    // Signed in
-    // const user = userCredential.user;//
-      const userinput = document.querySelector('#user').nodeValue;
+      .then((userCredential) => {
+      // Signed in
+      // const user = userCredential.user;//
+        const userinput = document.querySelector('#user').nodeValue;
 
-    // ..
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
+      // ..
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
       // ..
       });
-});
-
+  });*/
+  console.log('alert');
   return formCheck;
 }
 export default checkForm;
