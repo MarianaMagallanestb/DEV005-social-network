@@ -45,12 +45,14 @@ function checkForm() {
 
     loginWithCredentials(email.value, password.value)
       .then((res) => {
+        password.value = '';
         console.log(res);
       })
       .catch((err) => {
         console.error(err);
       });
   });
+
   // promesa validar usuario ,correo y contraseña
 
   /*ormCheck.addEventListener('submit', async (e) => {
