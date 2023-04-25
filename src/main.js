@@ -3,6 +3,7 @@
 import { home } from './components/home.js';
 import check from './components/check.js';
 import { welcome } from './components/welcome.js';
+import login from './components/iniciar.js';
 import { error } from './components/error.js';
 
 // traemos id de root al DOM
@@ -12,7 +13,9 @@ const routes = [
   { path: '/', component: home },
   { path: '/check', component: check },
   { path: '/welcome', component: welcome },
+  { path: '/login', component: login },
   { path: '/error', component: error },
+
 ];
 
 const defaultRoute = '/';

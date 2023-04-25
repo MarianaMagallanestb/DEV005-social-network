@@ -46,7 +46,6 @@ function checkForm() {
   formCheck.appendChild(btnSubmit);
   formCheck.appendChild(messengeErr);
   // FUNCION BOTON
-
   btnSubmit.addEventListener('click', (e) => {
     e.preventDefault();
 
@@ -63,6 +62,8 @@ function checkForm() {
           messengeErr.textContent = 'correo Invalido';
         } else if (errorCode === 'auth/missing-email') {
           messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
+        } else if (errorCode === 'auth/missing-password') {
+          messengeErr.textContent = 'Por favor Crea Contraseña';
         }
       });
   });
