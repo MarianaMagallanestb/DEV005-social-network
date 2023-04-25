@@ -64,6 +64,8 @@ function checkForm() {
           messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
         } else if (errorCode === 'auth/missing-password') {
           messengeErr.textContent = 'Por favor Crea Contraseña';
+        } else if (errorCode === 'auth/email-already-in-use') {
+          messengeErr.textContent = 'Este correo ya esta en uso';
         }
       });
   });

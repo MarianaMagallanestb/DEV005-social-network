@@ -1,3 +1,5 @@
+import { login } from '../lib/validationLogin';
+
 function signInForm() {
   const signIn = document.createElement('form');
   signIn.setAttribute = ('id', 'login');
@@ -37,17 +39,36 @@ function signInForm() {
   signIn.appendChild(btnlogin);
   signIn.appendChild(messengeErr2);
 
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, email.value, password.value)
-    .then((userCredential) => {
-    // Signed in
-      const user = userCredential.user;
-    // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    });
+  // promesa
+
+  btnlogin.addEventListener('click', (e) => {
+    e.preventDefault();
+
+    login(email2.value, password2.value)
+      .then((res) => {
+        console.log(res);
+        // Signed in
+        // const user = userCredential.user;
+        // ...
+      })
+      .catch((error) => {
+        // const errorMessage = error.message;
+        const errorCode = error.code;
+        console.log('alert', errorCode);
+        if (errorCode === 'auth/weak-password') {
+          messengeErr2.textContent = 'ingresa de minimo 6 caracteres';
+        } else if (errorCode === 'auth/invalid-email') {
+          messengeErr2.textContent = 'correo Invalido';
+        } else if (errorCode === 'auth/missing-email') {
+          messengeErr2.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
+        } else if (errorCode === 'auth/missing-password') {
+          messengeErr2.textContent = 'Por favor Crea Contraseña';
+        } else if (errorCode === 'auth/wrong-password') {
+          messengeErr2.textContent = 'contraseña invalida';
+        }
+      });
+  });
+
   return signIn;
 }
 export default signInForm;
