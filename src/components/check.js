@@ -1,4 +1,4 @@
-import { loginWithCredentials } from "../lib/validationCheck";
+import { loginWithCredentials } from '../lib/validationCheck';
 
 function checkForm() {
   const formCheck = document.createElement('form');
@@ -32,9 +32,9 @@ function checkForm() {
   console.log(formCheck);
 
   // mensajes de error
-  let messengeErr = document.createElement('p');
+  const messengeErr = document.createElement('p');
   messengeErr.setAttribute('id', 'error');
-  messengeErr = '';
+  messengeErr.textContent = '';
 
   formCheck.appendChild(title);
   formCheck.appendChild(User);
@@ -44,22 +44,27 @@ function checkForm() {
   formCheck.appendChild(email);
   formCheck.appendChild(laemail);
   formCheck.appendChild(btnSubmit);
+  formCheck.appendChild(messengeErr);
   // FUNCION BOTON
-
   btnSubmit.addEventListener('click', (e) => {
     e.preventDefault();
 
-    try {
-      const credentials = loginWithCredentials(email.value, password.value);
-      console.log(credentials);
-    } catch (err) {
-      if (err.code === 'auth/weak-password') {
-        alert('contraseña invalida');
-      }
-    }
+    loginWithCredentials(email.value, password.value)
+      .then((res) => {
+        console.log(res);
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        console.log('alert', errorCode);
+        if (errorCode === 'auth/weak-password') {
+          messengeErr.textContent = 'ingresa de minimo 6 caracteres';
+        } else if (errorCode === 'auth/invalid-email') {
+          messengeErr.textContent = 'correo Invalido';
+        } else if (errorCode === 'auth/missing-email') {
+          messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
+        }
+      });
   });
-
-  console.log('alert');
   return formCheck;
 }
 export default checkForm;
