@@ -4,8 +4,9 @@ function checkForm() {
   const formCheck = document.createElement('form');
   formCheck.setAttribute = ('id', 'claseTotal');
   // titulo
-  const title = document.createElement('h2');
+  const title = document.createElement('h1');
   title.textContent = '¡Bienvenida!';
+  title.setAttribute = ('id', 'title');
   // nombre de usuario
   const User = document.createElement('input');
   User.setAttribute('id', 'user');
@@ -50,17 +51,17 @@ function checkForm() {
     e.preventDefault();
 
     loginWithCredentials(email.value, password.value)
-      .then((res) => {
-        console.log(res);
+      .then((resp) => {
+        console.log(resp);
       })
-      .catch((error) => {
-        const errorCode = error.code;
-        console.log('alert', errorCode);
-        if (errorCode === 'auth/weak-password') {
+      .catch((errorin) => {
+        const errorinCode = errorin.code;
+        console.log('alert', errorinCode);
+        if (errorinCode === 'auth/weak-password') {
           messengeErr.textContent = 'ingresa de minimo 6 caracteres';
-        } else if (errorCode === 'auth/invalid-email') {
+        } else if (errorinCode === 'auth/invalid-email') {
           messengeErr.textContent = 'correo Invalido';
-        } else if (errorCode === 'auth/missing-email') {
+        } else if (errorinCode === 'auth/missing-email') {
           messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
         } else if (errorCode === 'auth/missing-password') {
           messengeErr.textContent = 'Por favor Crea Contraseña';

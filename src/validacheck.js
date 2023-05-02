@@ -1,4 +1,4 @@
-import { check } from './components/check.js';
+/* import { check } from './components/check.js';
 import './lib/firebase.js';
 
 check();
@@ -7,4 +7,4 @@ check();
 const form = document.querySelector('.claseTotal');
 form.addEventListener('Submit', (event) => {
   event.preventDefault();
-});
+}); */

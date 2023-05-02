@@ -37,8 +37,10 @@ function signInForm() {
   signIn.appendChild(btnlogin);
   signIn.appendChild(messengeErr2);
 
+  /* btnlogin.addEventListener('click', (e) => {
+    e.preventDefault();
   const auth = getAuth();
-  signInWithEmailAndPassword(auth, email.value, password.value)
+  signInWithEmailAndPassword(auth, email2.value, password2.value)
     .then((userCredential) => {
     // Signed in
       const user = userCredential.user;
@@ -47,7 +49,7 @@ function signInForm() {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-    });
+    }); */
   return signIn;
 }
 export default signInForm;
