@@ -2,7 +2,7 @@
 // Páginas importadas
 import { home } from './components/home.js';
 import check from './components/check.js';
-import { welcome } from './components/welcome.js';
+import welcome from './components/welcome.js';
 import login from './components/iniciar.js';
 import { error } from './components/error.js';
 

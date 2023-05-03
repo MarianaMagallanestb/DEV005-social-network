@@ -1,21 +1,25 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from 'firebase/app';
-import { getAuth, signInWithEmailAndPassword } from 'firebase/auth';
+import { getAuth } from 'firebase/auth';
+import { getFirestore } from 'firebase/firestore';
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
   apiKey: 'AIzaSyCLbSqZdX-nROzDUPmVUrTcm5d8dkunIfI',
-  autgithDomain: 'social-network-7ece4.firebaseapp.com',
+  authDomain: 'social-network-7ece4.firebaseapp.com',
   projectId: 'social-network-7ece4',
   storageBucket: 'social-network-7ece4.appspot.com',
   messagingSenderId: '954313566543',
-  appId: '1:954313566543:web:7216ef0012cd54244bfd3a',
-  measurementId: 'G-ESSGY9SNCM',
+  appId: '1:954313566543:web:fed0a09be287dcda4bfd3a',
+  measurementId: 'G-BH3VE6308W',
 };
 
 // Initialize Firebase
 export const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
+// Initialize Cloud Firestore and get a reference to the service
+export const db = getFirestore(app);
 console.log('auth', auth);
