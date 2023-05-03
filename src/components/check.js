@@ -2,48 +2,42 @@ import { loginWithCredentials } from '../lib/validationCheck';
 
 function checkForm() {
   const formCheck = document.createElement('form');
-  formCheck.setAttribute = ('id', 'claseTotal');
+  formCheck.id = 'formCheck';
   // titulo
   const title = document.createElement('h2');
-  title.textContent = '¡Bienvenida!';
+  title.textContent = 'Te damos la bienvenida a Bad Moms';
+  title.id = 'h2CheckIn';
   // nombre de usuario
   const User = document.createElement('input');
-  User.setAttribute('id', 'user');
+  User.id = 'impUser';
   const laUser = document.createElement('label');
   laUser.textContent = 'Nombre de Usuario';
-  laUser.classList.add('labelUser');
+  laUser.id = 'idlaUser';
   // contraseña
   const password = document.createElement('input');
   const lapassword = document.createElement('label');
-  password.setAttribute('id', 'password');
+  password.id = 'impPassword';
   lapassword.textContent = 'Crea Contraseña';
-  lapassword.classList.add('labelpassword');
+  lapassword.id = 'IdlaPassword';
   // correo
   const email = document.createElement('input');
   const laemail = document.createElement('label');
-  email.setAttribute('id', 'email');
+  email.id = 'impEmail';
   laemail.textContent = 'Ingresa Correo';
-  laemail.classList.add('labelemail');
+  laemail.id = 'IdlaEmail';
 
   // botón submit
   const btnSubmit = document.createElement('button');
   btnSubmit.textContent = 'Submit';
-  btnSubmit.setAttribute('id', 'btnSubmit');
+  btnSubmit.id = 'btnSubmitt';
   console.log(formCheck);
 
   // mensajes de error
   const messengeErr = document.createElement('p');
-  messengeErr.setAttribute('id', 'error');
+  messengeErr.id = 'messenger1';
   messengeErr.textContent = '';
 
-  formCheck.appendChild(title);
-  formCheck.appendChild(User);
-  formCheck.appendChild(laUser);
-  formCheck.appendChild(password);
-  formCheck.appendChild(lapassword);
-  formCheck.appendChild(email);
-  formCheck.appendChild(laemail);
-  formCheck.appendChild(btnSubmit);
+  formCheck.append(title, laUser, User, lapassword, password, laemail, email, btnSubmit);
   formCheck.appendChild(messengeErr);
   // FUNCION BOTON
   btnSubmit.addEventListener('click', (e) => {
@@ -66,6 +60,8 @@ function checkForm() {
           messengeErr.textContent = 'Por favor Crea Contraseña';
         } else if (errorCode === 'auth/email-already-in-use') {
           messengeErr.textContent = 'Este correo ya esta en uso';
+        } else {
+          messengeErr.textContent = 'gbreifhnerjfhiurgirg';
         }
       });
   });

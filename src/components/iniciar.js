@@ -67,6 +67,8 @@ function signInForm() {
           messengeErr2.textContent = 'Contraseña Invalida';
         } else if (errorCode === 'auth/user-not-found') {
           messengeErr2.textContent = 'Usuario no encontrado';
+        } else if (password2.value || email2.value === '') {
+          messengeErr2.textContent = 'Porfavor llene todos los campos';
         }
       });
   });
