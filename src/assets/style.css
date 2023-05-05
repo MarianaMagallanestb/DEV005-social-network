@@ -5,39 +5,62 @@
 }
 body{
     display: flex;
-    background-image: url(https://png.pngtree.com/background/20220714/original/pngtree-various-flower-nature-wallpaper-in-pink-picture-image_1604480.jpg);
+    flex-wrap: wrap;
+   background-color: rgb(201, 157, 241);
 
 
 }
-form {
 
-    padding: 10px;
-    border: 2px solid black;
-    margin: 5px;
+ /* Página home*/
+
+#sectionHome{
+    justify-content: center;
+    align-items: center;
+    margin-top: 15%;
+    margin-left: 50%;
+
+}
+
+#paragraphHome{
     display: flex;
-    display: block;
-    
+    justify-content: center;
+    width: 180%;
+    margin-top: 40px;
+    margin-left: 25px;
+    color: rgb(61, 8, 79);
+    font-size: 30px;
+    /*background-color: rgb(234, 167, 225);*/
+ 
 
 }
-/*@media(max-width:)*/
 
+#btnCheciin{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     height: 25px;
+    width: 35%;
+    margin-top: 45px;
+    margin-left: 305px;
+    background-color: rgb(72, 19, 119);
+    color: rgb(255, 255, 255);
+    border-radius: 15px;
+   
+}
+
+
+
+
+/*PAGINA LOGIN*/
 .btnhome{
 
-    background-color: rgba(210, 169, 208, 0.57);
+    background-color: rgb(72, 19, 119);
     display: flex;
     padding: 15px;
     margin: 50px;
     justify-content: center;
 }
-.parrafohome{
-    background-color: rgb(243, 185, 241);
-    padding: 10px;
-    border-radius:10px solid rgb(236, 76, 196) ;
-    text-align: center;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
-    color: black;
-}
+
 
 
 .classIniciar{
@@ -82,13 +105,13 @@ form {
    }
 
 #btnLogin{
-    background-color: rgb(240, 96, 166);
+    background-color: rgb(72, 19, 119);
     width: 200px;
     height: 35px;
     text-align: center;
     padding: 5px;
     border-radius: 15px;
-     color: rgb(13, 13, 13);
+     color: rgb(255, 254, 254);
     cursor: pointer;
     font-weight: bold;
     
@@ -98,4 +121,67 @@ form {
     width: 200px;
     color: rgb(96, 11, 11);
    
+}
+
+
+/*Página CheckIn*/
+#formCheck{
+    display: flex;
+    flex-direction: column;
+    margin-left: 660px;
+    margin-top: 15%;
+}
+
+#h2CheckIn{
+    font-size: 30px;
+    padding: 15px;
+    margin-right: 55% ;
+    width: 100%;
+}
+
+#impUser{
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+     color: rgb(13, 13, 13);
+    cursor: pointer;
+    font-weight:bold;
+}
+
+#impPassword{
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+     color: rgb(13, 13, 13);
+    cursor: pointer;
+    font-weight:bold;
+}
+#impEmail{
+    background-color: rgb(255, 255, 255);
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+     color: rgb(13, 13, 13);
+    cursor: pointer;
+    font-weight:bold;
+}
+#btnSubmitt{
+    background-color: rgb(72, 19, 119);
+    width: 200px;
+    height: 35px;
+    text-align: center;
+    padding: 5px;
+    border-radius: 15px;
+     color: rgb(249, 248, 248);
+    cursor: pointer;
+    font-weight: bold;
+    margin-top: 5%;
 }
