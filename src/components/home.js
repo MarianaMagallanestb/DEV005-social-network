@@ -1,7 +1,4 @@
-import check from '../components/check';
-
-check();
-export function home(navegate) {
+export function home() {
   // section
   const section = document.createElement('section');
   section.id = 'sectionHome';
@@ -27,10 +24,5 @@ export function home(navegate) {
   section.appendChild(btnCheckIn);
   section.appendChild(btnLogin);
 
-  const ruterCheckIn = (navegate) => {
-    ('/check');
-    console.log(ruterCheckIn);
-    return ruterCheckIn;
-}
   return section;
 }
