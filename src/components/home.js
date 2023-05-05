@@ -1,3 +1,6 @@
+import check from './check';
+
+check();
 export function home() {
   // section
   const section = document.createElement('section');
@@ -23,6 +26,11 @@ export function home() {
   section.appendChild(paragraph);
   section.appendChild(btnCheckIn);
   section.appendChild(btnLogin);
-
+  btnLogin.addEventListener('click', (e) => {
+    window.open('/login', '_self');
+  });
+  btnCheckIn.addEventListener('click', (e) => {
+    window.open('/check', '_self');
+  });
   return section;
 }
