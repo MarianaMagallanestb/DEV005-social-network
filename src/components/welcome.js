@@ -24,24 +24,25 @@ function post() {
   section.innerHTML = containerBody;
 
   const printPost = section.querySelector('#postContainer');
-  console.log('print', printPost);
-  window.addEventListener('load', async () => {
+  async function load() {
     const querySnapshot = await getPost();
     // query es todo mi objeto en formato firebase , se le agrega .data para pasarlo a formato js
-
-    querySnapshot.forEach((e) => {
-      const dataPost = e.data();
+    console.log('je', querySnapshot);
+    let html = '';
+    querySnapshot.forEach((doc) => {
+      const dataPost = doc.data();
       console.log('dataPost', dataPost);
+      html += `<p>${dataPost.content}</p>`;
     }); // falta hacer un inner.html que imprima la data en pantalla
-  });
-
+    printPost.innerHTML = html;
+  }
+  load();
   const formWelcome = section.querySelector('#post-publications');
   formWelcome.addEventListener('click', async (e) => {
     e.preventDefault();
 
     const idImputPost = document.querySelector('#inputPublication');
     await savePost(idImputPost.value);
-    console.log(idImputPost.value);
     formWelcome.reset();
   });
 

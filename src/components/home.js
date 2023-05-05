@@ -1,4 +1,7 @@
-export function home() {
+import check from '../components/check';
+
+check();
+export function home(navegate) {
   // section
   const section = document.createElement('section');
   section.id = 'sectionHome';
@@ -16,10 +19,18 @@ export function home() {
   const btnCheckIn = document.createElement('botton');
   btnCheckIn.id = 'btnCheciin';
   btnCheckIn.textContent = 'Resgistrarse';
-
+  const btnLogin = document.createElement('button');
+  btnLogin.id = 'btnlogin';
+  btnLogin.textContent = 'Iniciar Sesión';
   section.appendChild(img);
   section.appendChild(paragraph);
   section.appendChild(btnCheckIn);
+  section.appendChild(btnLogin);
 
+  const ruterCheckIn = (navegate) => {
+    ('/check');
+    console.log(ruterCheckIn);
+    return ruterCheckIn;
+}
   return section;
 }

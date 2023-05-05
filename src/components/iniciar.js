@@ -1,6 +1,6 @@
 import { login } from '../lib/validationLogin';
 
-function signInForm() {
+function signInForm(navegate) {
   const signIn = document.createElement('form');
   signIn.setAttribute = ('id', 'login');
   // titulo
@@ -46,10 +46,8 @@ function signInForm() {
 
     login(email2.value, password2.value)
       .then((res) => {
+        navegate('/welcome');
         console.log(res);
-        // Signed in
-        // const user = userCredential.user;
-        // ...
       })
       .catch((error) => {
         // const errorMessage = error.message;
