@@ -15,6 +15,7 @@ function checkForm() {
   laUser.id = 'idlaUser';
   // contraseña
   const password = document.createElement('input');
+  password.setAttribute('type', 'password');
   const lapassword = document.createElement('label');
   password.id = 'impPassword';
   lapassword.textContent = 'Crea Contraseña';

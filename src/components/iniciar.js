@@ -10,6 +10,7 @@ function signInForm(navegate) {
   title2.classList.add('classIniciar');
   // contraseña
   const password2 = document.createElement('input');
+  password2.setAttribute('type', 'password');
   password2.placeholder = 'Contraseña';
   password2.id = 'password2';
   password2.classList.add('classIniciar');
