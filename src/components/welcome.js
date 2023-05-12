@@ -16,7 +16,8 @@ function post() {
   <label id="labelPost">Postea</label>
   <input id="inputPublication" type="text" placeholder="¿Cómo te sientes hoy?"></input>
   <button id="btnPost" type="button">Publicar</button>
-</div>
+  <button id="btnDelete" type="button">Eliminar</button>
+  </div>
 </form>
 <div id="postContainer"></div>
 </main>
@@ -36,6 +37,7 @@ function post() {
     }); // falta hacer un inner.html que imprima la data en pantalla
     printPost.innerHTML = html;
   }
+
   load();
   const formWelcome = section.querySelector('#post-publications');
   formWelcome.addEventListener('click', async (e) => {

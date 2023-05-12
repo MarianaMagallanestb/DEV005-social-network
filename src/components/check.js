@@ -1,6 +1,6 @@
 import { loginWithCredentials } from '../lib/validationCheck';
 
-function checkForm() {
+function checkForm(navegate) {
   const formCheck = document.createElement('form');
   formCheck.id = 'formCheck';
   // titulo
@@ -47,6 +47,7 @@ function checkForm() {
     loginWithCredentials(email.value, password.value)
       .then((resp) => {
         console.log(resp);
+        navegate('/welcome');
       })
       .catch((errorin) => {
         const errorinCode = errorin.code;
@@ -56,10 +57,10 @@ function checkForm() {
         } else if (errorinCode === 'auth/invalid-email') {
           messengeErr.textContent = 'correo Invalido';
         } else if (errorinCode === 'auth/missing-email') {
-          messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
-        } else if (errorCode === 'auth/missing-password') {
+          messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electronico';
+        } else if (errorinCode === 'auth/missing-password') {
           messengeErr.textContent = 'Por favor Crea Contraseña';
-        } else if (errorCode === 'auth/email-already-in-use') {
+        } else if (errorinCode === 'auth/email-already-in-use') {
           messengeErr.textContent = 'Este correo ya esta en uso';
         } else {
           messengeErr.textContent = 'gbreifhnerjfhiurgirg';
