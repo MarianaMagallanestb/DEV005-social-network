@@ -72,19 +72,6 @@ function signInForm(navegate) {
       });
   });
 
-  /* btnlogin.addEventListener('click', (e) => {
-    e.preventDefault();
-  const auth = getAuth();
-  signInWithEmailAndPassword(auth, email2.value, password2.value)
-    .then((userCredential) => {
-    // Signed in
-      const user = userCredential.user;
-    // ...
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-    }); */
   return signIn;
 }
 export default signInForm;

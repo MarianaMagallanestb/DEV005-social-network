@@ -46,6 +46,7 @@ function checkForm(navegate) {
 
     loginWithCredentials(email.value, password.value)
       .then((resp) => {
+        navegate('/welcome');
         console.log(resp);
         navegate('/welcome');
       })
@@ -57,7 +58,7 @@ function checkForm(navegate) {
         } else if (errorinCode === 'auth/invalid-email') {
           messengeErr.textContent = 'correo Invalido';
         } else if (errorinCode === 'auth/missing-email') {
-          messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electronico';
+          messengeErr.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
         } else if (errorinCode === 'auth/missing-password') {
           messengeErr.textContent = 'Por favor Crea Contraseña';
         } else if (errorinCode === 'auth/email-already-in-use') {

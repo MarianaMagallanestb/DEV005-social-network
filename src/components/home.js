@@ -8,7 +8,7 @@ export function home() {
   // titulo
   const img = document.createElement('img');
   img.src = 'https://fontmeme.com/permalink/230413/94187632b7e104d4a58cd78a1e645259.png';
-  img.id = '#img';
+  img.id = 'imgHome';
 
   // parrafo
   const paragraph = document.createElement('h2');
@@ -16,7 +16,7 @@ export function home() {
   paragraph.textContent = '¡Comparte tu experiencia en confianza!';
 
   // botón que llevará a la página de registro
-  const btnCheckIn = document.createElement('botton');
+  const btnCheckIn = document.createElement('button');
   btnCheckIn.id = 'btnCheciin';
   btnCheckIn.textContent = 'Resgistrarse';
   const btnLogin = document.createElement('button');
