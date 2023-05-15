@@ -1,5 +1,5 @@
 import {
-  savePost, activeLoad, getPost, deleteId, getEdit,
+  savePost, activeLoad, getPost, deleteId, getEdit, updataPost,
 } from '../lib/cloudData';
 
 function post() {
@@ -28,6 +28,7 @@ function post() {
 `;
   section.innerHTML = containerBody;
   let edtitStatus = false;
+  let id = '';
   const printPost = section.querySelector('#postContainer');
   async function load() {
     activeLoad((querySnapshot) => {
@@ -57,12 +58,12 @@ function post() {
           // utilizamos un textContent porque las referencias son text
           const textP = section.querySelector(`.${classP}`).textContent;
           console.log('ELMENTO: ', textP);
-          /// const edit = await getEdit(e.target.dataset.id);
-          // const dataE = edit.data();
-          // console.log(dataE);
+
           const imputEdit = section.querySelector('#inputPublication');
           console.log(imputEdit);
           imputEdit.value = textP;
+
+          id = e.target.dataset.id;
           edtitStatus = true;
 
           // tenemops que hacer condicionales para que el texto de publicar cambie a actualizar
@@ -80,11 +81,20 @@ function post() {
 
     const idImputPost = document.querySelector('#inputPublication');
     // condiciconal para que no se iproiman espacios en blanco
-    await savePost(idImputPost.value);
-    console.log(idImputPost.value);
-    formWelcome.reset();
+    // await savePost(idImputPost.value);
+    // console.log(idImputPost.value);
+    if (!edtitStatus) {
+      await savePost(idImputPost.value);
+      console.log(idImputPost.value);
+    } else {
+      console.log('actualizando');
+      updataPost(id, {
+        content: idImputPost.value,
+      });
+    }
+    edtitStatus = false;
   });
-
+  formWelcome.reset();
   return section;
 }
 export default post;

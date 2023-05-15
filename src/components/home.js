@@ -20,9 +20,18 @@ export function home() {
   btnCheckIn.id = 'btnCheciin';
   btnCheckIn.textContent = 'Resgistrarse';
   const btnLogin = document.createElement('button');
-  btnLogin.id = 'btnlogin';
+  btnLogin.id = 'btnLogiin';
   btnLogin.textContent = 'Iniciar Sesión';
+  const imgMoms1 = document.createElement('img');
+  imgMoms1.src = '';
+  imgMoms1.id = 'imgMoms1';
+  const imgMoms2 = document.createElement('img');
+  imgMoms2.src = '';
+  imgMoms2.id = 'imgMoms2';
+
   section.appendChild(img);
+  section.appendChild(imgMoms1);
+  section.appendChild(imgMoms2);
   section.appendChild(paragraph);
   section.appendChild(btnCheckIn);
   section.appendChild(btnLogin);

@@ -12,4 +12,4 @@ export const activeLoad = (callback) => onSnapshot(collection(db, 'post'), callb
 
 export const deleteId = (id) => deleteDoc(doc(db, 'post', id));
 export const getEdit = (id) => getDoc(doc(db, 'post', id));
-export const updataPost = (id, newpost) => updateDoc(doc(db, 'post', id), newpost);
+export const updataPost = (id, newcontent) => updateDoc(doc(db, 'post', id), newcontent);
