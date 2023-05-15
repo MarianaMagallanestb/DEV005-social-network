@@ -42,16 +42,22 @@ function post() {
       });
       printPost.innerHTML = html;
       const btnDelete = printPost.querySelectorAll('.btnsDelete');
+      // const imputClean = section.querySelector('#inputPublication');
       console.log(btnDelete);
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', (e) => {
+          const messegeAlert = confirm('¿Seguro que quiere eliminar este post?');
+
+          if (messegeAlert) { deleteId(e.target.dataset.id); }
+
           console.log(e.target.dataset.id);
-          deleteId(e.target.dataset.id);
         });
       });
       const btnsEdit = printPost.querySelectorAll('.btnEdit');
+      const btnPostear = section.querySelector('#btnPost');
       btnsEdit.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
+          btnPostear.innerText = 'Actualizar';
           // classP nos trae el ID de cada post
           const classP = e.target.dataset.id;
           //  texP nos va a traer el texto parrafo del documento a traves de su ID
@@ -80,21 +86,29 @@ function post() {
     e.preventDefault();
 
     const idImputPost = document.querySelector('#inputPublication');
+    const btnPostear = section.querySelector('#btnPost');
     // condiciconal para que no se iproiman espacios en blanco
     // await savePost(idImputPost.value);
     // console.log(idImputPost.value);
     if (!edtitStatus) {
       await savePost(idImputPost.value);
       console.log(idImputPost.value);
+      btnPostear.innerText = 'Publicar';
     } else {
-      console.log('actualizando');
       updataPost(id, {
         content: idImputPost.value,
       });
     }
+
     edtitStatus = false;
+    formWelcome.reset();
   });
-  formWelcome.reset();
+
   return section;
 }
 export default post;
+
+/* const idImputPost = document.querySelector('#inputPublication');
+  if (idImputPost.value === '') {
+    return false;
+  } */
