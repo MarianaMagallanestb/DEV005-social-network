@@ -38,7 +38,7 @@ function checkForm(navegate) {
   messengeErr.id = 'messenger1';
   messengeErr.textContent = '';
 
-  formCheck.append(title, laUser, User, lapassword, password, laemail, email, btnSubmit);
+  formCheck.append(title, laUser, User, laemail, email, lapassword, password, btnSubmit);
   formCheck.appendChild(messengeErr);
   // FUNCION BOTON
   btnSubmit.addEventListener('click', (e) => {

@@ -1,6 +1,7 @@
 import {
   savePost, activeLoad, getPost, deleteId, getEdit, updataPost,
 } from '../lib/cloudData';
+import { currentUser } from '../configurar firebase/firebase';
 
 function post() {
   const section = document.createElement('section');
@@ -35,9 +36,13 @@ function post() {
       let html = '';
       querySnapshot.forEach((doc) => {
         const dataPost = doc.data();
+
+        // if(dataPost.email === currentUser.email) entonces pintame en pantalla BtnEdit BtnDelete
+        //
         html += `<p class="${doc.id}" >${dataPost.content}</p>
-        <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
-        <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
+        ${dataPost.email === currentUser.email ? `<button class="btnsDE" data-id='${doc.id}' >Eliminar</button>``<button class = "btnsDE" data-id ="${doc.id}">Editar</button>` : ''
+},
+        
         `;
       });
       printPost.innerHTML = html;
@@ -91,7 +96,7 @@ function post() {
     // await savePost(idImputPost.value);
     // console.log(idImputPost.value);
     if (!edtitStatus) {
-      await savePost(idImputPost.value);
+      await savePost(idImputPost.value, currentUser.email);
       console.log(idImputPost.value);
       btnPostear.innerText = 'Publicar';
     } else {

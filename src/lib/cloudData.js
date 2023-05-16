@@ -5,7 +5,7 @@ import {
 
 import { db } from '../configurar firebase/firebase.js';
 
-export const savePost = async (content) => await addDoc(collection(db, 'post'), { content });
+export const savePost = async (content, email) => await addDoc(collection(db, 'post'), { content, email });
 
 export const getPost = () => getDocs(collection(db, 'post'));
 export const activeLoad = (callback) => onSnapshot(collection(db, 'post'), callback);
