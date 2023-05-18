@@ -1,6 +1,6 @@
 import { doc } from 'firebase/firestore';
 import {
-  savePost, activeLoad, getPost, deleteId, getEdit, updataPost, giveLike,
+  savePost, activeLoad, getPost, deleteId, getEdit, updataPost, giveLike, disLike, getOnePost,
 } from '../lib/cloudData';
 import { currentUser } from '../configurar firebase/firebase';
 
@@ -47,7 +47,7 @@ function post() {
         <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
         <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
         <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
-        <spam class ="numberLikes">(0)</spam>
+        <spam class ="numberLikes">(${dataPost.like.length})</spam>
         `;
       });
       printPost.innerHTML = html;
@@ -59,14 +59,25 @@ function post() {
       btnsLike.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           console.log('jeje', btn);
+          // trae el email
           const emailPost = currentUser.email;
           console.log('hi', emailPost);
+          // trae el id del post
           const classLike = e.target.dataset.id;
           console.log('buscandote', classLike);
-          //  texP nos va a traer el texto parrafo del documento a traves de su ID
-          // utilizamos un textContent porque las referencias son text
           const textL = section.querySelector(`.${classLike}`).textContent;
           console.log('ELMENTO: ', textL);
+          // tenemos que traer la data del comentari
+          getOnePost(classLike).then((res) => {
+            const dataOnePost = res.data();
+            if (dataOnePost.like !== undefined && dataOnePost.like.includes(currentUser.email)) {
+              disLike(classLike, emailPost);
+              console.log('dislike', disLike);
+            } else {
+              giveLike(classLike, emailPost);
+              console.log('giveLikes', giveLike);
+            }
+          });
         });
       });
 
