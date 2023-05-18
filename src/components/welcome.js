@@ -1,5 +1,6 @@
+import { doc } from 'firebase/firestore';
 import {
-  savePost, activeLoad, getPost, deleteId, getEdit, updataPost,
+  savePost, activeLoad, getPost, deleteId, getEdit, updataPost, giveLike,
 } from '../lib/cloudData';
 import { currentUser } from '../configurar firebase/firebase';
 
@@ -29,6 +30,7 @@ function post() {
 `;
   section.innerHTML = containerBody;
   let edtitStatus = false;
+  // <img class="corazon" src="assets/img/corazon.png"
   let id = '';
   const printPost = section.querySelector('#postContainer');
   async function load() {
@@ -36,18 +38,39 @@ function post() {
       let html = '';
       querySnapshot.forEach((doc) => {
         const dataPost = doc.data();
-
         // if(dataPost.email === currentUser.email) entonces pintame en pantalla BtnEdit BtnDelete
-        //
-        html += `<p class="${doc.id}" >${dataPost.content}</p>
-        ${dataPost.email === currentUser.email ? `<button class="btnsDE" data-id='${doc.id}' >Eliminar</button>``<button class = "btnsDE" data-id ="${doc.id}">Editar</button>` : ''
-},
+        html += `
         
+      
+       
+        <p class="${doc.id}" >${dataPost.content}</p>
+        <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
+        <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
+        <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
+        <spam class ="numberLikes">(0)</spam>
         `;
       });
       printPost.innerHTML = html;
+      // función de dar like
+      const idPost = printPost.querySelectorAll(`.${doc.id}`);
+      console.log('idPost', idPost);
+      console.log(idPost);
+      const btnsLike = printPost.querySelectorAll('.heart');
+      btnsLike.forEach((btn) => {
+        btn.addEventListener('click', (e) => {
+          console.log('jeje', btn);
+          const emailPost = currentUser.email;
+          console.log('hi', emailPost);
+          const classLike = e.target.dataset.id;
+          console.log('buscandote', classLike);
+          //  texP nos va a traer el texto parrafo del documento a traves de su ID
+          // utilizamos un textContent porque las referencias son text
+          const textL = section.querySelector(`.${classLike}`).textContent;
+          console.log('ELMENTO: ', textL);
+        });
+      });
+
       const btnDelete = printPost.querySelectorAll('.btnsDelete');
-      // const imputClean = section.querySelector('#inputPublication');
       console.log(btnDelete);
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', (e) => {
@@ -58,6 +81,7 @@ function post() {
           console.log(e.target.dataset.id);
         });
       });
+
       const btnsEdit = printPost.querySelectorAll('.btnEdit');
       const btnPostear = section.querySelector('#btnPost');
       btnsEdit.forEach((btn) => {
@@ -65,6 +89,7 @@ function post() {
           btnPostear.innerText = 'Actualizar';
           // classP nos trae el ID de cada post
           const classP = e.target.dataset.id;
+          console.log('buscandote', classP);
           //  texP nos va a traer el texto parrafo del documento a traves de su ID
           // utilizamos un textContent porque las referencias son text
           const textP = section.querySelector(`.${classP}`).textContent;

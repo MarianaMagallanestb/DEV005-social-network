@@ -1,6 +1,7 @@
 // aqui exportamos la funcion y returnamos
 import {
-  collection, addDoc, getDocs, onSnapshot, doc, deleteDoc, getDoc, updateDoc,
+  collection, addDoc, getDocs, onSnapshot, doc, deleteDoc, getDoc, updateDoc, arrayUnion,
+  arrayRemove,
 } from 'firebase/firestore';
 
 import { db } from '../configurar firebase/firebase.js';
@@ -13,3 +14,7 @@ export const activeLoad = (callback) => onSnapshot(collection(db, 'post'), callb
 export const deleteId = (id) => deleteDoc(doc(db, 'post', id));
 export const getEdit = (id) => getDoc(doc(db, 'post', id));
 export const updataPost = (id, newcontent) => updateDoc(doc(db, 'post', id), newcontent);
+
+export const giveLike = async (id, email) => await updateDoc(doc(db, 'post', id), {
+  like: arrayUnion(email),
+});
