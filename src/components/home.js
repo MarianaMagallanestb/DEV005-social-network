@@ -13,12 +13,12 @@ export function home() {
   // parrafo
   const paragraph = document.createElement('h2');
   paragraph.id = 'paragraphHome';
-  paragraph.textContent = '¡Comparte tu experiencia en confianza!';
+  paragraph.textContent = 'Conéctate con otras Mamás y comparte experiencias únicas de la maternidad';
 
   // botón que llevará a la página de registro
   const btnCheckIn = document.createElement('button');
   btnCheckIn.id = 'btnCheciin';
-  btnCheckIn.textContent = 'Resgistrarse';
+  btnCheckIn.textContent = 'Registrarse';
   const btnLogin = document.createElement('button');
   btnLogin.id = 'btnLogiin';
   btnLogin.textContent = 'Iniciar Sesión';

@@ -3,6 +3,7 @@ import { login } from '../lib/validationLogin';
 function signInForm(navegate) {
   const signIn = document.createElement('form');
   signIn.setAttribute = ('id', 'login');
+  signIn.id = 'signInForm';
   // titulo
   const title2 = document.createElement('h2');
   title2.textContent = 'Iniciar Sesión';
@@ -33,10 +34,19 @@ function signInForm(navegate) {
   messengeErr2.textContent = '';
   messengeErr2.classList.add('classIniciar');
 
-  signIn.appendChild(title2);
+  const labelPasswordL = document.createElement('p');
+  labelPasswordL.id = 'laPasswordLogin';
+  labelPasswordL.textContent = 'Ingrese su contraseña';
 
-  signIn.appendChild(password2);
+  const laEmailLogin = document.createElement('p');
+  laEmailLogin.id = 'laEmailLogin';
+  laEmailLogin.textContent = 'Ingrese su correo';
+
+  signIn.appendChild(title2);
+  signIn.appendChild(laEmailLogin);
   signIn.appendChild(email2);
+  signIn.appendChild(labelPasswordL);
+  signIn.appendChild(password2);
   signIn.appendChild(btnlogin);
   signIn.appendChild(messengeErr2);
 
