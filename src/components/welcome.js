@@ -47,13 +47,11 @@ function post() {
         <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
         <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
         <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
-        <spam class ="numberLikes">(${dataPost.like.length})</spam>
+        <spam class ="numberLikes">${dataPost.like.length}</spam>
         `;
       });
       printPost.innerHTML = html;
       // función de dar like
-      const idPost = printPost.querySelectorAll(`.${doc.id}`);
-      console.log(idPost);
       const btnsLike = printPost.querySelectorAll('.heart');
       btnsLike.forEach((btn) => {
         btn.addEventListener('click', (e) => {
