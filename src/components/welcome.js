@@ -53,18 +53,14 @@ function post() {
       printPost.innerHTML = html;
       // función de dar like
       const idPost = printPost.querySelectorAll(`.${doc.id}`);
-      console.log('idPost', idPost);
       console.log(idPost);
       const btnsLike = printPost.querySelectorAll('.heart');
       btnsLike.forEach((btn) => {
         btn.addEventListener('click', (e) => {
-          console.log('jeje', btn);
           // trae el email
           const emailPost = currentUser.email;
-          console.log('hi', emailPost);
           // trae el id del post
           const classLike = e.target.dataset.id;
-          console.log('buscandote', classLike);
           const textL = section.querySelector(`.${classLike}`).textContent;
           console.log('ELMENTO: ', textL);
           // tenemos que traer la data del comentari
@@ -72,24 +68,19 @@ function post() {
             const dataOnePost = res.data();
             if (dataOnePost.like !== undefined && dataOnePost.like.includes(currentUser.email)) {
               disLike(classLike, emailPost);
-              console.log('dislike', disLike);
             } else {
               giveLike(classLike, emailPost);
-              console.log('giveLikes', giveLike);
             }
           });
         });
       });
 
       const btnDelete = printPost.querySelectorAll('.btnsDelete');
-      console.log(btnDelete);
       btnDelete.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           const messegeAlert = confirm('¿Seguro que quiere eliminar este post?');
 
           if (messegeAlert) { deleteId(e.target.dataset.id); }
-
-          console.log(e.target.dataset.id);
         });
       });
 
@@ -100,14 +91,10 @@ function post() {
           btnPostear.innerText = 'Actualizar';
           // classP nos trae el ID de cada post
           const classP = e.target.dataset.id;
-          console.log('buscandote', classP);
           //  texP nos va a traer el texto parrafo del documento a traves de su ID
           // utilizamos un textContent porque las referencias son text
           const textP = section.querySelector(`.${classP}`).textContent;
-          console.log('ELMENTO: ', textP);
-
           const imputEdit = section.querySelector('#inputPublication');
-          console.log(imputEdit);
           imputEdit.value = textP;
 
           id = e.target.dataset.id;

@@ -31,7 +31,6 @@ function checkForm(navegate) {
   const btnSubmit = document.createElement('button');
   btnSubmit.textContent = 'Submit';
   btnSubmit.id = 'btnSubmitt';
-  console.log(formCheck);
 
   // mensajes de error
   const messengeErr = document.createElement('p');
@@ -51,7 +50,6 @@ function checkForm(navegate) {
       })
       .catch((errorin) => {
         const errorinCode = errorin.code;
-        console.log('alert', errorinCode);
         if (errorinCode === 'auth/weak-password') {
           messengeErr.textContent = 'ingresa de minimo 6 caracteres';
         } else if (errorinCode === 'auth/invalid-email') {
