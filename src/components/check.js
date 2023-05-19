@@ -47,6 +47,7 @@ function checkForm(navegate) {
       .then((resp) => {
         navegate('/welcome');
         console.log(resp);
+        navegate('/welcome');
       })
       .catch((errorin) => {
         const errorinCode = errorin.code;
