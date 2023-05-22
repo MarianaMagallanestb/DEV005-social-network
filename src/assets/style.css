@@ -251,16 +251,76 @@ body{
  }
 
  .mainWelcome{
-    margin-top: 35%;
-    margin-left: 20%;
+    margin-top: 15%;
+    margin-left: 5%;
  }
 
- #postContainer{
-    margin: 10%;
+ #postContainer .btnsDelete, .btnEdit, .heart{
+    display: grid;
+    margin: 0%;
+    box-sizing: border-box;
+
  }
 
  p{
-    font-size: 100%;
-    background-color: aliceblue;
+    font-size: 105%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2%;
+    padding: 2%;
+    background-color: rgb(229, 216, 235);
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    word-break: break-all;
+    border-radius: 5px;
     
+ }
+
+ .btnsDelete{
+    background-color: #5d057a;
+    color: rgb(237, 237, 237);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 100%;
+   display: flex;
+width: 20%;
+border-radius: 5px;
+justify-content: center;
+letter-spacing: 1px;
+cursor: pointer;
+
+
+ }
+ .btnEdit{
+    background-color: #5d057a;
+    color: rgb(237, 237, 237);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 100%;
+   display: flex;
+width: 20%;
+border-radius: 5px;
+justify-content: center;
+letter-spacing: 1px;
+margin-top: 2%;
+cursor: pointer;
+
+ }
+
+ .heart{
+    background-color: #5d057a;
+    color: rgb(237, 237, 237);
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-size: 100%;
+   display: flex;
+width: 20%;
+border-radius: 5px;
+justify-content: center;
+letter-spacing: 1px;
+margin-top: 2%;
+cursor: pointer;
+
+ }
+
+ .numberLikes{
+    font-size: 150%;
  }

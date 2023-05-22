@@ -50,10 +50,11 @@ function post() {
       
        
         <p class="${doc.id}">${dataPost.content}</p>
-        <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
-        <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
         <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
         <spam class ="numberLikes">${dataPost.like.length}</spam>
+        <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
+        <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
+        
         `;
       });
       printPost.innerHTML = html;
