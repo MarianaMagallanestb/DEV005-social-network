@@ -1,12 +1,12 @@
 import { doc } from 'firebase/firestore';
 import {
-  savePost, activeLoad, getPost, deleteId, getEdit, updataPost, giveLike, disLike, getOnePost,
+  savePost, activeLoad, deleteId, updataPost, giveLike, disLike, getOnePost,
 } from '../lib/cloudData';
 import { currentUser } from '../configurar firebase/firebase';
 
 function post() {
   const section = document.createElement('section');
-
+  section.id = 'sectionWelcome';
   const containerBody = `
   
 
@@ -16,17 +16,23 @@ function post() {
   </figure>
 </header>
 
-<main>
+<main class ="mainWelcome">
 <form id="post-publications">
   <label id="labelPost">Postea</label>
   <input id="inputPublication" type="text" placeholder="¿Cómo te sientes hoy?"></input>
   <button id="btnPost" type="submit">Publicar</button>
-  <button class="btnDelete" type="button">Eliminar</button>
+  
 </form>
+
 <div id="postContainer">
 
 </div>
+
 </main>
+<div>
+<button class="btnClouseLogin" type="button">cerrar sesión</button>
+</div>
+
 `;
   section.innerHTML = containerBody;
   let edtitStatus = false;
@@ -43,7 +49,7 @@ function post() {
         
       
        
-        <p class="${doc.id}" >${dataPost.content}</p>
+        <p class="${doc.id}">${dataPost.content}</p>
         <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
         <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
         <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
@@ -68,7 +74,6 @@ function post() {
             const dataOnePost = res.data();
             if (dataOnePost.like !== undefined && dataOnePost.like.includes(currentUser.email)) {
               disLike(classLike, emailPost);
-              console.log('dislike', disLike);
             } else {
               giveLike(classLike, emailPost);
               console.log('giveLikes', giveLike);
@@ -119,7 +124,7 @@ function post() {
 
   load();
   const formWelcome = section.querySelector('#post-publications');
-  formWelcome.addEventListener('submit', async (e) => {
+  formWelcome.addEventListener('submit', (e) => {
     e.preventDefault();
 
     const idImputPost = document.querySelector('#inputPublication');
@@ -128,8 +133,8 @@ function post() {
     // await savePost(idImputPost.value);
     // console.log(idImputPost.value);
     if (!edtitStatus) {
-      await savePost(idImputPost.value, currentUser.email);
-      console.log(idImputPost.value);
+      console.log(idImputPost.value, currentUser.email);
+      savePost(idImputPost.value, currentUser.email);
       btnPostear.innerText = 'Publicar';
     } else {
       updataPost(id, {

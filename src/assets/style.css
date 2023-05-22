@@ -236,8 +236,31 @@ body{
     border-radius: 15px;
 }
 /*welcome*/
+ #sectionWelcome{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
 
-.corazon{
-    width: 20px;
-    height: 20px;
-}
+ }
+
+ #bad-moms{
+    padding: 5px;
+    margin: 5px;
+    width: 50%;
+    height: 10%;
+
+ }
+
+ .mainWelcome{
+    margin-top: 35%;
+    margin-left: 20%;
+ }
+
+ #postContainer{
+    margin: 10%;
+ }
+
+ p{
+    font-size: 100%;
+    background-color: aliceblue;
+    
+ }

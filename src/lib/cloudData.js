@@ -1,13 +1,12 @@
 // aqui exportamos la funcion y returnamos
 import {
   collection, addDoc, getDocs, onSnapshot, doc, deleteDoc, getDoc, updateDoc, arrayUnion,
-  arrayRemove,setDoc,
+  arrayRemove, setDoc,
 } from 'firebase/firestore';
 
 import { db } from '../configurar firebase/firebase.js';
-import { async } from 'regenerator-runtime';
 
-export const savePost = async (content, email) => await addDoc(collection(db, 'post'), { content, email });
+export const savePost = (content, email) => addDoc(collection(db, 'post'), { content, email, like: [] });
 
 export const getPost = () => getDocs(collection(db, 'post'));
 export const getOnePost = (id) => getDoc(doc(db, 'post', id));
@@ -28,4 +27,3 @@ export const disLike = async (id, email) => await updateDoc(doc(db, 'post', id),
 export const addLikeDocument = () => setDoc(doc(db, 'post'), {
   like: '',
 });
-
