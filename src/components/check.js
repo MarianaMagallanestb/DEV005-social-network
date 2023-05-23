@@ -44,9 +44,7 @@ function checkForm(navegate) {
     e.preventDefault();
 
     loginWithCredentials(email.value, password.value)
-      .then((resp) => {
-        navegate('/welcome');
-        console.log(resp);
+      .then(() => {
         navegate('/welcome');
       })
       .catch((errorin) => {

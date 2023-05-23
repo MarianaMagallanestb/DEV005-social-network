@@ -26,7 +26,6 @@ function signInForm(navegate) {
   btnlogin.textContent = 'Inicia Sesión';
   btnlogin.id = 'btnLogin';
   btnlogin.classList.add('classIniciar');
-  console.log(signIn);
 
   // mensajes de error
   const messengeErr2 = document.createElement('p');
@@ -56,14 +55,12 @@ function signInForm(navegate) {
     e.preventDefault();
 
     login(email2.value, password2.value)
-      .then((res) => {
+      .then(() => {
         navegate('/welcome');
-        console.log(res);
       })
       .catch((error) => {
         // const errorMessage = error.message;
         const errorCode = error.code;
-        console.log('alert', errorCode);
         if (errorCode === 'auth/weak-password') {
           messengeErr2.textContent = 'Ingresa de minimo 7 caracteres';
         } else if (errorCode === 'auth/invalid-email') {

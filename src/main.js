@@ -34,7 +34,6 @@ function navegate(enlace) {
   }
 }
 window.onpopstate = () => {
-  console.log('hubo un cambio');
   navegate(window.location.pathname);
 };
 
