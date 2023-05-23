@@ -3,6 +3,8 @@
  */
 
 import post from '../src/components/welcome';
+import iniciar from '../src/components/iniciar';
+import { login } from '../src/lib/validationLogin';
 
 describe('es una function', () => {
   test('is a fuction', () => {
@@ -11,6 +13,34 @@ describe('es una function', () => {
   test('have a button', () => {
     const DOM = document.createElement('div');
     DOM.append('#btnPost');
+  });
+  test('buttons delete', () => {
+    const DOM = document.createElement('div');
+    DOM.append('.btnsDelete');
+  });
+  test('button edit', () => {
+    const DOM = document.createElement('div');
+    DOM.append('.btnEdit');
+  });
+});
+
+describe('iniciar', () => {
+  it('mostrar mensaje de error cuando correo o contraseña no existe', (done) => {
+    const vistaIniciar = iniciar();
+    const btnlogin = vistaIniciar.querySelector('#btnLogin');
+    // eslint-disable-next-line consistent-return
+    login.mockImplementation((email) => {
+      if (email === 'bgg@gmail.com') {
+        // eslint-disable-next-line prefer-promise-reject-errors
+        return Promise.reject({ code: 'auth/user-not-found' });
+      }
+    });
+    vistaIniciar.querySelector('#email2').value = 'bgg@gmail.com';
+    btnlogin.click();
+    setTimeout(()=>{
+      expect(vistaIniciar.querySelector('#messegeErr2').textContent).toEqual('Usuario no encontrado');
+      done()
+    }, 1500)
   });
 });
 
