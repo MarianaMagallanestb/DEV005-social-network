@@ -35,10 +35,10 @@ export function home() {
   section.appendChild(paragraph);
   section.appendChild(btnCheckIn);
   section.appendChild(btnLogin);
-  btnLogin.addEventListener('click', (e) => {
+  btnLogin.addEventListener('click', () => {
     window.open('/login', '_self');
   });
-  btnCheckIn.addEventListener('click', (e) => {
+  btnCheckIn.addEventListener('click', () => {
     window.open('/check', '_self');
   });
   return section;

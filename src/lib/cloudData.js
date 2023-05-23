@@ -16,14 +16,17 @@ export const deleteId = (id) => deleteDoc(doc(db, 'post', id));
 export const getEdit = (id) => getDoc(doc(db, 'post', id));
 export const updataPost = (id, newcontent) => updateDoc(doc(db, 'post', id), newcontent);
 
-export const giveLike = async (id, email) => await updateDoc(doc(db, 'post', id), {
+export const giveLike = (id, email) => updateDoc(doc(db, 'post', id), {
   like: arrayUnion(email),
 });
 
-export const disLike = async (id, email) => await updateDoc(doc(db, 'post', id), {
+export const disLike = (id, email) => updateDoc(doc(db, 'post', id), {
   like: arrayRemove(email),
 });
 
 export const addLikeDocument = () => setDoc(doc(db, 'post'), {
   like: '',
 });
+export {
+  deleteDoc,
+};
