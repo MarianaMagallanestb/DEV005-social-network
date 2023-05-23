@@ -27,6 +27,12 @@ function signInForm(navegate) {
   btnlogin.id = 'btnLogin';
   btnlogin.classList.add('classIniciar');
   console.log(signIn);
+  // botón google
+
+  const btnGoogle = document.createElement('button');
+  btnGoogle.textContent = 'Google';
+  btnGoogle.id = 'btnGoogle';
+  btnGoogle.classList.add('classGoogle');
 
   // mensajes de error
   const messengeErr2 = document.createElement('p');
@@ -48,6 +54,7 @@ function signInForm(navegate) {
   signIn.appendChild(labelPasswordL);
   signIn.appendChild(password2);
   signIn.appendChild(btnlogin);
+  signIn.appendChild(btnGoogle);
   signIn.appendChild(messengeErr2);
 
   // promesa
