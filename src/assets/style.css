@@ -7,8 +7,7 @@ body{
     display: flex;
     flex-wrap: wrap;
    background-color: rgb(201, 157, 241);
-   
-
+   background-image: url(/assets/img/BADMOMS.png);
 }
 
  /* Página home*/
@@ -18,8 +17,6 @@ body{
     align-items: center;
     margin-top: 29%;
     margin-left: 63%;
-    
-
 }
 
 #imgHome{

@@ -6,6 +6,8 @@ import post from '../src/components/welcome';
 import iniciar from '../src/components/iniciar';
 import { login } from '../src/lib/validationLogin';
 
+
+
 describe('es una function', () => {
   test('is a fuction', () => {
     expect(typeof post).toBe('function');
@@ -29,7 +31,7 @@ describe('iniciar', () => {
     const vistaIniciar = iniciar();
     const btnlogin = vistaIniciar.querySelector('#btnLogin');
     // eslint-disable-next-line consistent-return
-    login.mockImplementation((email) => {
+    jest.spyOn(login).mockImplementation((email) => {
       if (email === 'bgg@gmail.com') {
         // eslint-disable-next-line prefer-promise-reject-errors
         return Promise.reject({ code: 'auth/user-not-found' });
@@ -43,6 +45,15 @@ describe('iniciar', () => {
     }, 1500)
   });
 });
+describe  ('welcome', ()=>{
+  it ('llama a la function deleteId',(done)=>{
+    const deleteWelcome= welcome ();
+    const btnsDelete = deleteWelcome.querySelector('.btnsDelete')
+    
+  })
+})
+
+
 
 // import * as post from '../src/components/welcome';
 
