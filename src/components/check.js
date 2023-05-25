@@ -29,7 +29,7 @@ function checkForm(navegate) {
 
   // botón submit
   const btnSubmit = document.createElement('button');
-  btnSubmit.textContent = 'Submit';
+  btnSubmit.textContent = 'Registrar';
   btnSubmit.id = 'btnSubmitt';
 
   // mensajes de error

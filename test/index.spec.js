@@ -6,8 +6,7 @@ import post from '../src/components/welcome';
 import iniciar from '../src/components/iniciar';
 import { login } from '../src/lib/validationLogin';
 
-
-
+// test welcome
 describe('es una function', () => {
   test('is a fuction', () => {
     expect(typeof post).toBe('function');
@@ -26,10 +25,40 @@ describe('es una function', () => {
   });
 });
 
+// test check
+describe('checkForm', () => {
+  test('hay un imput para ingresar contraseña', () => {
+    const DOM = document.createElement('div');
+    DOM.append('#impPassword');
+  });
+  test('hay un imput para ingresar correo Electronico }', () => {
+    const DOM = document.createElement('div');
+    DOM.append('#impEmail');
+  });
+  test('hay un boton submit', () => {
+    const DOM = document.createElement('div');
+    DOM.append('#btnSubmitt');
+  });
+});
+
+// test Logim
 describe('iniciar', () => {
+  test('btnLogin', () => {
+    const DOM = document.createElement('div');
+    DOM.append('.btnLogin');
+  });
+  test(' hay un imput Pasword', () => {
+    const DOM = document.createElement('div');
+    DOM.append('#password2');
+  });
+  test('hay un imput de email', () => {
+    const DOM = document.createElement('div');
+    DOM.append('#email2');
+  });
   it('mostrar mensaje de error cuando correo o contraseña no existe', (done) => {
     const vistaIniciar = iniciar();
     const btnlogin = vistaIniciar.querySelector('#btnLogin');
+
     // eslint-disable-next-line consistent-return
     jest.spyOn(login).mockImplementation((email) => {
       if (email === 'bgg@gmail.com') {
@@ -39,21 +68,21 @@ describe('iniciar', () => {
     });
     vistaIniciar.querySelector('#email2').value = 'bgg@gmail.com';
     btnlogin.click();
-    setTimeout(()=>{
+    setTimeout(() => {
       expect(vistaIniciar.querySelector('#messegeErr2').textContent).toEqual('Usuario no encontrado');
-      done()
-    }, 1500)
+      done();
+    }, 1500);
   });
 });
-describe  ('welcome', ()=>{
-  it ('llama a la function deleteId',(done)=>{
-    const deleteWelcome= welcome ();
-    const btnsDelete = deleteWelcome.querySelector('.btnsDelete')
-    
-  })
-})
+//  cierrre de test login
 
-
+// test welcome
+/* describe('welcome', () => {
+  it('llama a la function deleteId', (done) => {
+    const deleteWelcome = welcome();
+    const btnsDelete = deleteWelcome.querySelector('.btnsDelete');
+  });
+}); */// cierre de testr welcome//
 
 // import * as post from '../src/components/welcome';
 

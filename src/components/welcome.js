@@ -15,27 +15,30 @@ function post() {
   </figure>
 </header>
 
+
 <main class ="mainWelcome">
 <form id="post-publications">
-  <label id="labelPost">Postea</label>
+  <label id="labelPost"></label>
   <input id="inputPublication" type="text" placeholder="¿Cómo te sientes hoy?"></input>
-  <button id="btnPost" type="submit">Publicar</button>
-  
+  <button id="btnPost" type="submit">Publicar</button> 
 </form>
-
-<div id="postContainer">
-
-</div>
-
+<div id="postContainer"></div>
 </main>
+
 <div>
-<button class="btnClouseLogin" type="button">cerrar sesión</button>
+<button id="btnClouseLogin" type="button">cerrar sesión</button>
 </div>
 
 `;
+
   section.innerHTML = containerBody;
+  const btnClouse = section.querySelector('#btnClouseLogin');
+
+  btnClouse.addEventListener('click', () => {
+    window.open('/ ', '_self');
+  });
+
   let edtitStatus = false;
-  // <img class="corazon" src="assets/img/corazon.png"
   let id = '';
   const printPost = section.querySelector('#postContainer');
   async function load() {
@@ -47,13 +50,13 @@ function post() {
         html += `
         
       
-       
+       <div class = "divPost">
         <p class="${doc.id}">${dataPost.content}</p>
         <button class="heart" "${dataPost.email}" data-id="${doc.id}">like</button>
         <spam class ="numberLikes">${dataPost.like.length}</spam>
         <button class="btnsDelete" data-id="${doc.id}" >Eliminar</button>
         <button class = "btnEdit" data-id ="${doc.id}">Editar</button>
-        
+        </div>
         `;
       });
       printPost.innerHTML = html;

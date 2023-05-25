@@ -70,19 +70,19 @@ function signInForm(navegate) {
         // const errorMessage = error.message;
         const errorCode = error.code;
         if (errorCode === 'auth/weak-password') {
-          messengeErr2.textContent = 'Ingresa de minimo 7 caracteres';
+          messengeErr2.textContent = 'Ingreso mínimo 7 caracteres';
         } else if (errorCode === 'auth/invalid-email') {
-          messengeErr2.textContent = 'Correo Invalido';
+          messengeErr2.textContent = 'Correo Inválido';
         } else if (errorCode === 'auth/missing-email') {
-          messengeErr2.textContent = 'Porvafor Ingrese una dirección de correo electorinico';
+          messengeErr2.textContent = 'Por favor Ingrese una dirección de correo electrónico';
         } else if (errorCode === 'auth/missing-password') {
           messengeErr2.textContent = 'Por favor Ingrese Contraseña';
         } else if (errorCode === 'auth/wrong-password') {
-          messengeErr2.textContent = 'Contraseña Invalida';
+          messengeErr2.textContent = 'Contraseña Inválida';
         } else if (errorCode === 'auth/user-not-found') {
           messengeErr2.textContent = 'Usuario no encontrado';
         } else if (password2.value || email2.value === '') {
-          messengeErr2.textContent = 'Porfavor llene todos los campos';
+          messengeErr2.textContent = 'Por favor llene todos los campos';
         }
       });
   });
