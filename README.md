@@ -17,5 +17,10 @@ Página tipo SPA que cuenta con un router de navegación para las diferentes vis
 ![](/src/assets/img/img%20bad%20moms/prototipoAlta.png)
 ### 7 Link de la Página
 https://social-network-7ece4.web.app/
-
-Mariana Magallanes
+ 
+ ### 8 Proyecto realizado por 
+ Brina Gárofalo
+ https://github.com/BrinaGarofalo
+ 
+ Mariana Magallanes
+ https://github.com/MarianaMagallanestb
