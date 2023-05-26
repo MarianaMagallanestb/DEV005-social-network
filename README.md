@@ -18,3 +18,4 @@ Página tipo SPA que cuenta con un router de navegación para las diferentes vis
 ### 7 Link de la Página
 https://social-network-7ece4.web.app/
 
+Mariana Magallanes
