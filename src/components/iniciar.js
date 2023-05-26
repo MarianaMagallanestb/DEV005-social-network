@@ -28,7 +28,7 @@ function signInForm(navegate) {
   btnlogin.classList.add('classIniciar');
 
   // mensajes de error
-  const messengeErr2 = document.createElement('p');
+  const messengeErr2 = document.createElement('span');
   messengeErr2.id = 'messegeErr2';
   messengeErr2.textContent = '';
   messengeErr2.classList.add('classIniciar');

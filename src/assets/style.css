@@ -5,14 +5,12 @@
 }
 
 body {
-    /*display: flex;
-    flex-wrap: wrap;*/
     background-color: rgb(201, 157, 241);
 
 
 }
 
-/*-------------------------------- Página home------------------------------------------*/
+/*-------------------------------- Página home MOVIE------------------------------------------*/
 
 #sectionHome {
     display: flex;
@@ -20,9 +18,6 @@ body {
     align-items: center;
     width: 80%;
     height: 100%;
-    /*justify-content: center;
-    align-items: center;
-    margin-top: 29%;*/
     padding: 15%;
     margin: auto;
 
@@ -160,7 +155,7 @@ body {
         cursor: default;
 
         margin-top: 5%;
-        /*background-color: rgb(234, 167, 225);*/
+    
 
 
     }
@@ -171,112 +166,22 @@ body {
 }
 
 
-/*-------------------------------Diseño Login------------------------------*/
-
-/*.classIniciar {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-left: 320%;
-    margin-top: 5%;
-
-}
-
-#signInForm {
-    padding: 15px;
-}
-
-#titleLogin {
-    margin-top: 100px;
-    font-size: 30px;
-    width: 190px;
-    margin-left: 322%;
-    letter-spacing: 0.5px;
-}
+/*----------------------------------DISEÑO DESKOP LOGIN - CHECK ---------------------------*/
 
 
-
-#password2 {
-    width: 200px;
-    height: 35px;
-    text-align: center;
-    padding: 5px;
-    border-radius: 10px;
-    color: rgb(13, 13, 13);
-    cursor: pointer;
-    font-weight: bold;
-}
-
-#email2 {
-
-    width: 200px;
-    height: 35px;
-    text-align: center;
-    padding: 5px;
-    border-radius: 10px;
-    color: rgb(13, 13, 13);
-    cursor: pointer;
-    font-weight: bold;
-
-}
-
-#btnLogin {
-    background-color: rgb(72, 19, 119);
-    width: 200px;
-    height: 35px;
-    text-align: center;
-    padding: 5px;
-    border-radius: 15px;
-    color: rgb(255, 254, 254);
-    cursor: pointer;
-    font-weight: bold;
-    margin-top: 15%;
-    font-size: 18px;
-    letter-spacing: 0.5px;
-
-}
-
-#messegeErr2 {
-    width: 200px;
-    color: rgb(96, 11, 11);
-
-}
-
-#laPasswordLogin {
-    margin-left: 322%;
-    width: max-content;
-    margin-top: 25px;
-    font-size: 17px;
-    color: #412559;
-    letter-spacing: 0.5px;
-
-}
-
-#laEmailLogin {
-    margin-left: 322%;
-    width: max-content;
-    margin-top: 25px;
-    font-size: 17px;
-    color: #412559;
-    letter-spacing: 0.5px;
-}*/
-
-/*----------------------------------DISEÑO RESPONSIVE LOGIN - CHECK ---------------------------*/
-
-
-@media (min-width:500px) {
+@media (min-width:390px) {
 
     #formCheck,
     #signInForm {
         display: flex;
         flex-direction: column;
         margin: auto;
-        outline: 2px solid rgba(21, 18, 18, 0.6);
+    
         width: 80%;
         height: 450px;
         align-items: center;
         margin-top: 5%;
-        background-color: aquamarine;
+       
 
 
 
@@ -306,7 +211,7 @@ body {
     #email2,
     #password2 {
         background-color: rgb(255, 255, 255);
-        width: 250px;
+        width: 20px;
         height: 45px;
         text-align: center;
         padding: 5px;
@@ -320,7 +225,7 @@ body {
 
     }
 
-    #btnSubmitt,
+
     #btnLogin {
         background-color: rgb(72, 19, 119);
         width: 200px;
@@ -333,7 +238,6 @@ body {
         font-weight: bold;
         margin-top: 5%;
     }
-
 
 }
 
@@ -348,14 +252,14 @@ body {
     width: 80%;
     height: 600px;
     align-items: center;
-    margin-top: 40%;
+    margin-top: 10%;
 
 
 
 }
 
 #formCheck label,
-#signInForm p {
+#signInForm span {
     font-size: 1em;
     font-family: Arial, Helvetica, sans-serif;
 
@@ -366,29 +270,45 @@ body {
     text-align: center;
     font-size: 30px;
     width: 100%;
-    margin-bottom: 8%;
+    margin-bottom: 2%;
 
 
 
 }
 
-#impUser,
-#impPassword,
-#impEmail,
 #email2,
-#password2 {
+#password2{
     background-color: rgb(255, 255, 255);
     width: 250px;
     height: 45px;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     border-radius: 10px;
     color: rgb(13, 13, 13);
     cursor: pointer;
     font-weight: bold;
-    margin-bottom: 10%;
+    margin-bottom: 1%;
+    margin-top: 2%;
+    border: transparent;
+
+}
+
+
+#impPassword,
+#impEmail{
+    background-color: rgb(255, 255, 255);
+    width: 250px;
+    height: 45px;
+    text-align: center;
+    padding: 2px;
+    border-radius: 10px;
+    color: rgb(13, 13, 13);
+    cursor: pointer;
+    font-weight: bold;
+    margin-bottom: 1%;
     margin-top: 5%;
     border: transparent;
+
 
 }
 
@@ -398,204 +318,18 @@ body {
     width: 200px;
     height: 35px;
     text-align: center;
-    padding: 5px;
+    padding: 2px;
     border-radius: 15px;
     color: rgb(249, 248, 248);
     cursor: pointer;
     font-weight: bold;
-    margin-top: 5%;
+    margin-top: 3%;
 }
 
-
-/*----------------------------DISEÑO RESPONSIVE CHECKIN------------------------------*/
-
-/*@media (max-width:394px) {
-
-    #formCheck {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        margin-left: 4%;
-        margin-top: 35%;
-    }
-
-    #h2CheckIn {
-        font-size: 22px;
-        padding: 15px;
-        width: 110%;
-        display: flex;
-        margin-left: 3%;
-
-    }
-
-}*/
-
-
-
-/*---------------------------------------welcome-------------------------------------------*/
-/*#sectionWelcome {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-
-}
-
-#bad-moms {
-    padding: 5px;
-    margin: 5px;
-    width: 50%;
-    height: 10%;
-
-}
-
-.mainWelcome {
-    margin-top: 35%;
-    margin-left: 5%;
-}
-
-#postContainer {
-    display: grid;
-    margin: 0%;
-    box-sizing: border-box;
-
-}
-
-/*p {
-    font-size: 105%;
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    margin: 2%;
-    padding: 2%;
-    min-width: 50px;
-    min-height: 50px;
-    display: flex;
-    flex-wrap: nowrap;
-    word-break: keep-all;
-    border-radius: 5px;
-    margin-top: 5%;
-
-}
-
-.btnsDelete {
-    background-color: #5d057a;
-    color: rgb(237, 237, 237);
-    font-weight: bolder;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    display: flex;
-    width: 18%;
-    border-radius: 2px;
-    justify-content: center;
-    letter-spacing: 1px;
-    cursor: pointer;
-    margin-left: 80%;
-    position: relative;
-    top: -140%;
-
-
-}
-
-.btnEdit {
-    background-color: #5d057a;
-    color: rgb(237, 237, 237);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    font-weight: bolder;
-    display: flex;
-    width: 18%;
-    border-radius: 2px;
-    justify-content: center;
-    letter-spacing: 1px;
-    margin-top: 2%;
-    cursor: pointer;
-    margin-left: 80%;
-    position: relative;
-    top: -290%;
-
-}
-
-.heart {
-    background-color: #5d057a;
-    color: rgb(237, 237, 237);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    font-weight: bolder;
-    display: flex;
-    width: 18%;
-    border-radius: 2px;
-    justify-content: center;
-    letter-spacing: 1px;
-    margin-top: 2%;
-    cursor: pointer;
-    position: relative;
-    top: -28%;
-    margin-left: 2%;
-
-}
-
-.numberLikes {
-    font-size: 150%;
-    margin-left: 10%;
-}
-
-#post-publications {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-right: 15%;
-    height: 3%;
-    width: 97%;
-    position: relative;
-    top: -3%;
-}
-
-#inputPublication {
-    width: 80%;
-    height: 60%;
-    font-size: 105%;
-    margin-left: 3%;
-}
-
-#btnPost {
-    background-color: #5d057a;
-    color: rgb(237, 237, 237);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    font-weight: bolder;
-    display: flex;
-    width: 18%;
-    border-radius: 2px;
-    justify-content: center;
-    letter-spacing: 1px;
-    margin-top: 2%;
-    cursor: pointer;
-    margin-left: 2%;
-    position: relative;
-    top: -10%;
-
-
-}
-
-
-#btnClouseLogin {
-    background-color: #b599bd;
-    border-color: #b599bd;
-    color: rgb(237, 237, 237);
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 90%;
-    font-weight: bolder;
-    display: flex;
-    width: 28%;
-    border-radius: 2px;
-    justify-content: center;
-    letter-spacing: 1px;
-    position: relative;
-    margin-top: 2%;
-    margin-left: 68%;
-}*/
+/*------DISEÑO DESKOP WELCOME----------*/
 header {
     width: 100%;
     height: 70px;
-    outline: 2px solid red;
 }
 
 #bad-moms {
@@ -608,15 +342,13 @@ main {
     padding-left: 20%;
     padding-right: 20%;
     margin: auto;
-    outline: 2px solid rgb(17, 17, 17);
     margin-top: 20px;
 
 }
 
 #post-publications {
     width: 100%;
-    height: 300px;
-    outline: 2px solid blue;
+    height: 100px;
 
 }
 
@@ -629,7 +361,7 @@ main {
 .divPost {
     width: 100%;
     height: 100%;
-    outline: 2px solid yellow;
+    border: 2px solid rgb(87, 64, 92);
     margin-top: 20px;
     padding: 20px;
     position: relative;
@@ -640,28 +372,29 @@ main {
 
 .divPost .btnEdit {
     position: absolute;
-    right: 0px;
-    bottom: 0px;
+    right: 38px;
+    bottom: 8px;
 
 }
 
 .divPost .btnsDelete {
     position: absolute;
-    right: 75px;
-    bottom: 0px;
+    right: 185px;
+    bottom: 8px;
+    
 
 }
 
 .divPost .heart {
     position: absolute;
-    left: 0px;
-    bottom: 0px;
+    left: 38px;
+    bottom: 8px;
 
 }
 .divPost .numberLikes {
     position: absolute;
-    left: 75px;
-    bottom: 5px;
+    left: 178px;
+    bottom: 8px;
 
 }
 
@@ -672,128 +405,259 @@ main {
     height: 30px;
 }
 
+#btnClouseLogin{
+    position: relative;
+    left: 1420px;
+    
+}
+
+/*estilos, colores y tamaños (welcome desckop*/
+#inputPublication{
+    border:transparent;
+    width: 75%;
+    height: 65%;
+    margin-left: 5%;
+    font-size: 16px;
+}
+#btnPost{
+    width: 122px;
+    height: 25px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-left: 1%;
+    font-size: 16px;
+    cursor: pointer;
+}
+p{
+    font-size: 110%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2%;
+    padding: 2%;
+    background-color: rgb(229, 216, 235);
+    min-width: 80%;
+    min-height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    word-break: break-word;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+.btnsDelete{
+    width: 122px;
+    height: 25px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+
+
+}
+.btnEdit{
+    width: 122px;
+    height: 25px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+    
+
+}
+ .heart{
+    width: 122px;
+    height: 25px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+.numberLikes{
+    font-size: 18px;
+}
+
+#btnClouseLogin{
+    width: 90px;
+    height: 20px;
+    background-color: rgb(94, 87, 98);
+    border:transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 14px;
+    top: -35px;
+}
+
+
+
 
 
 /*--------------------------------DISEÑO RESPONSIVE WELCOME------------------------*/
 
-/*
-@media (max-width:394px) {
-    #bad-moms {
-        padding: 5px;
-        margin: 5px;
+@media (max-width:500px){
+
+
+    header {
         width: 100%;
-        height: 30%;
-
+        height: 70px;
     }
-
-
-    .mainWelcome {
-        margin-top: 105%;
-        margin-right: 200%;
+    
+    #bad-moms {
+        width: 130px;
+        
     }
-
-    /*p {
-        font-size: 115%;
-        font-family: Verdana, Geneva, Tahoma, sans-serif;
-        margin: 2%;
-        padding: 2%;
-        background-color: rgb(229, 216, 235);
-        min-width: 250%;
-        min-height: 50px;
-        display: flex;
-        flex-wrap: nowrap;
-        word-break: keep-all;
-        border-radius: 5px;
-        margin-top: 5%;
-
-    }*/
-
-/*
-    .btnsDelete {
-        background-color: #5d057a;
-        color: rgb(237, 237, 237);
-        font-weight: bolder;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 90%;
-        display: flex;
-        width: 68%;
-        border-radius: 2px;
-        justify-content: center;
-        letter-spacing: 1px;
-        cursor: pointer;
-        margin-left: 80%;
-        position: relative;
-        top: -105%;
-
-
+    
+    main {
+        width: 100%;
+        height: 100%;
+        padding-left: 10%;
+        padding-right: 10%;
+        margin: auto;
+        margin-top: 20px;
+    
     }
+    
 
-    .btnEdit {
-        background-color: #5d057a;
-        color: rgb(237, 237, 237);
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 90%;
-        font-weight: bolder;
-        display: flex;
-        width: 68%;
-        border-radius: 2px;
-        justify-content: center;
-        letter-spacing: 1px;
-        margin-top: 2%;
-        cursor: pointer;
-        margin-left: 80%;
-        position: relative;
-        top: -290%;
-
-    }
-
-    .heart {
-        background-color: #5d057a;
-        color: rgb(237, 237, 237);
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-        font-size: 90%;
-        font-weight: bolder;
-        display: flex;
-        width: 68%;
-        border-radius: 2px;
-        justify-content: center;
-        letter-spacing: 1px;
-        margin-top: 2%;
-        cursor: pointer;
-        position: relative;
-        top: -28%;
-        margin-left: 2%;
-
-    }
-
-    .numberLikes {
-        font-size: 150%;
-        margin-left: 10%;
-    }
-
+    
     #post-publications {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-right: 15%;
-        height: 3%;
-        width: 297%;
-        position: relative;
-        top: -3%;
+        width: 100%;
+        height: 65px;
+        
+    
     }
-
-    #inputPublication {
-        width: 80%;
-        height: 60%;
-        font-size: 105%;
-        margin-left: 3%;
-    }*/
-
-
-
-
-
-
+    
+    #postContainer {
+        display: flex;
+        flex-flow: column;
+    
+    }
+    
+    .divPost {
+        width: 100%;
+        height: 100%;
+        border: 1px solid rgb(87, 64, 92);
+        margin-top: 20px;
+        padding: 20px;
+        position: relative;
+        padding-bottom: 40px;
+        word-wrap: break-word;
+        text-align: justify;
+    }
+    
+    .divPost .btnEdit {
+        position: absolute;
+        right: 10px;
+        bottom: 0px;
+        margin-right: 15px;
+    
+    }
+    
+    .divPost .btnsDelete {
+        position: absolute;
+        right: 95px;
+        bottom: 0px;
+        margin-left: 48px;
+    }
+    
+    .divPost .heart {
+        position: absolute;
+        left: 0px;
+        bottom: 0px;
+        margin-left: 20px ;
+        
+    
+    }
+    .divPost .numberLikes {
+        position: absolute;
+        left: 91px;
+        bottom: 0px;
+    
+    }
+    
+    .btnEdit,
+    .btnsDelete,
+    .heart {
+        width: 65px;
+        height: 22px;
+    }
+    
+/*estilos, colores y tamaños (welcome movile)*/
+#inputPublication{
+    border:transparent;
+    width: 65%;
+    height: 35%;
+    margin-left: 18%;
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+#btnPost{
+    width: 118px;
+    height: 23px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    margin-left: 28%;
+    font-size: 15px;
+    cursor: pointer;
+}
+p{
+    font-size: 105%;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin: 2%;
+    padding: 2%;
+    background-color: rgb(229, 216, 235);
+    min-width: 80%;
+    min-height: 50px;
+    display: flex;
+    flex-wrap: nowrap;
+    word-break: break-word;
+    border-radius: 5px;
+    margin-top: 5%;
+}
+.btnsDelete{
+    width: 65px;
+    height: 20px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
 
 
 }
+.btnEdit{
+    width: 60px;
+    height: 20px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+    
+
+}
+ .heart{
+    width: 60px;
+    height: 20px;
+    background-color: rgb(107, 61, 150);
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 16px;
+
+}
+.numberLikes{
+    font-size: 18px;
+}
+
+#btnClouseLogin{
+    width: 20px;
+    height: 20px;
+    background-color: rgb(94, 87, 98);
+    border:transparent;
+    color: rgb(255, 255, 255);
+    border-radius: 5px;
+    font-size: 14px;
+}
+/*no encuentro el boton cerrar sesion*/
+
+}
+
+
+

@@ -13,6 +13,9 @@ function post() {
   <figure>
     <img id="bad-moms" src="https://fontmeme.com/permalink/230413/94187632b7e104d4a58cd78a1e645259.png">
   </figure>
+  <div>
+<button id="btnClouseLogin" type="button">cerrar sesión</button>
+</div>
 </header>
 
 
@@ -25,9 +28,7 @@ function post() {
 <div id="postContainer"></div>
 </main>
 
-<div>
-<button id="btnClouseLogin" type="button">cerrar sesión</button>
-</div>
+
 
 `;
 

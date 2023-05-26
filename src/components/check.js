@@ -8,11 +8,11 @@ function checkForm(navegate) {
   title.textContent = 'Te damos la bienvenida a Bad Moms';
   title.id = 'h2CheckIn';
   // nombre de usuario
-  const User = document.createElement('input');
+  /* const User = document.createElement('input');
   User.id = 'impUser';
   const laUser = document.createElement('label');
   laUser.textContent = 'Nombre de Usuario';
-  laUser.id = 'idlaUser';
+  laUser.id = 'idlaUser'; */
   // contraseña
   const password = document.createElement('input');
   password.setAttribute('type', 'password');
@@ -33,11 +33,11 @@ function checkForm(navegate) {
   btnSubmit.id = 'btnSubmitt';
 
   // mensajes de error
-  const messengeErr = document.createElement('p');
+  const messengeErr = document.createElement('span');
   messengeErr.id = 'messenger1';
   messengeErr.textContent = '';
 
-  formCheck.append(title, laUser, User, laemail, email, lapassword, password, btnSubmit);
+  formCheck.append(title, laemail, email, lapassword, password, btnSubmit);
   formCheck.appendChild(messengeErr);
   // FUNCION BOTON
   btnSubmit.addEventListener('click', (e) => {
