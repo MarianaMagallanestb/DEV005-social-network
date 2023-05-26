@@ -13,6 +13,8 @@ Página tipo SPA que cuenta con un router de navegación para las diferentes vis
 ### 4 Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
 ![](/src/assets/img/img%20bad%20moms/imageBaja.png)
 
-### 6  Diseño de la Interfaz del usuario (prototipo baja fidelidad)
+### 6  Diseño de la Interfaz del usuario (prototipo alta fidelidad)
 ![](/src/assets/img/img%20bad%20moms/prototipoAlta.png)
 ### 7 Link de la Página
+https://social-network-7ece4.web.app/
+
